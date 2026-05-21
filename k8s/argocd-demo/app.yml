@@ -4,7 +4,7 @@ metadata:
   name: demo-app
   namespace: argocd
   labels:
-    name: chai-app
+    name: demo-app
   annotations:
     argocd-image-updater.argoproj.io/image-list: app=robinsabhaya/app
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds
