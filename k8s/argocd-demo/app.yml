@@ -11,15 +11,15 @@ metadata:
     argocd-image-updater.argoproj.io/chai-app.update-strategy: semver
 
 spec:
-  project: default              # Associates this Application with the 'default' ArgoCD project
+  project: default
   source:
-    repoURL: https://github.com/RobinSabhaya/argocd-demo.git # Git repository containing the app manifests
-    targetRevision: master        # Branch or tag to track in the repository
-    path: k8s/argocd-demo # Path within the repo where the manifests(kustomization) are located
+    repoURL: https://github.com/RobinSabhaya/argocd-demo.git
+    targetRevision: master
+    path: k8s/argocd-demo
   destination:
-    server: https://kubernetes.default.svc # Kubernetes API server address (in-cluster)
-    namespace: default           # Namespace in the cluster where app resources will be deployed
+    server: https://kubernetes.default.svc
+    namespace: default
   syncPolicy:
-    automated:                  # Enables automated sync for the application
-      prune: true               # Automatically deletes resources that are no longer defined in Git
-      selfHeal: true            # Automatically corrects drift between live and desired state
+    automated:
+      prune: true
+      selfHeal: true
