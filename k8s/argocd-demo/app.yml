@@ -1,7 +1,7 @@
 kind: Application
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: chai-app
+  name: demo-app
   namespace: argocd
   labels:
     name: chai-app
