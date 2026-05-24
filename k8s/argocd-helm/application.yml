@@ -11,7 +11,14 @@ spec:
     repoURL: https://github.com/RobinSabhaya/argocd-demo.git
     targetRevision: master
     path: k8s/argocd-helm/argocd-helm-chart
-    chart:
+    chart: argocd-helm-chart
     helm:
       valueFiles:
         - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
