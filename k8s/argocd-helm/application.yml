@@ -1,0 +1,17 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: argocd-helm-app
+  namespace: argocd
+  labels:
+    name: argocd-helm-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/RobinSabhaya/argocd-demo.git
+    targetRevision: master
+    path: k8s/argocd-helm/argocd-helm-chart
+    chart:
+    helm:
+      valueFiles:
+        - values.yaml
