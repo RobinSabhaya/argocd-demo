@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: robinsabhaya/app:latest
+          image: robinsabhaya/app:1.0.0
           imagePullPolicy: IfNotPresent
           resources:
             requests:
