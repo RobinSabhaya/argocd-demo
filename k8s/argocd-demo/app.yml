@@ -6,7 +6,7 @@ metadata:
   labels:
     name: demo-app
   annotations:
-    argocd-image-updater.argoproj.io/image-list: app=robinsabhaya/app
+    argocd-image-updater.argoproj.io/image-list: demo-app=robinsabhaya/app
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds
     argocd-image-updater.argoproj.io/demo-app.update-strategy: semver
 
