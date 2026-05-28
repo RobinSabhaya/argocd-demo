@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: app-deployment
+  name: demo-app-deployment
   namespace: argocd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: demo-app
   template:
     metadata:
       labels:
-        app: app
+        app: demo-app
     spec:
       containers:
-        - name: app
+        - name: demo-app
           image: robinsabhaya/app:v1.0.3
           imagePullPolicy: IfNotPresent
           resources:
