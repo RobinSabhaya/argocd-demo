@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - robinsabhaya/app:v1.0.8
