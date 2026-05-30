@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - robinsabhaya/chai-devops:v1.0.8

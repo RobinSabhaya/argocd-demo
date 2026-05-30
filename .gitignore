@@ -2,4 +2,3 @@ node_modules
 k8s/argocd/*
 plan.txt
 k8s/argocd-demo/secret-image-updater-git.yaml
-k8s/argocd-chai/secret-image-updater-git.yml
