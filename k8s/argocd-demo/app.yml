@@ -5,11 +5,6 @@ metadata:
   namespace: argocd
   labels:
     name: demo-app
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: demo-app=robinsabhaya/app
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds
-    argocd-image-updater.argoproj.io/demo-app.update-strategy: semver
-
 spec:
   project: default
   source:

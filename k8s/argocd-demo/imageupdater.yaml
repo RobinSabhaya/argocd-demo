@@ -1,0 +1,15 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: demo-app-image-updater
+  namespace: argocd
+spec:
+  applicationRefs:
+    - namePattern: "demo-app"
+      images:
+        - alias: "demo-app"
+          imageName: "robinsabhaya/app"
+          commonUpdateSettings:
+            updateStrategy: "semver"
+  writeBackConfig:
+    method: "git:secret:argocd/git-creds"
