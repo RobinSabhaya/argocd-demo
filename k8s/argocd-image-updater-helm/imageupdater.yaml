@@ -1,0 +1,18 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: argocd-image-updater-helm
+  namespace: argocd
+spec:
+  applicationRefs:
+    - namePattern: "argocd-image-updater-helm"
+      images:
+        - alias: "argocd-image-updater-helm"
+          imageName: "robinsabhaya/app"
+      writeBackConfig:
+        method: "git:secret:argocd/git-creds"
+        gitConfig:
+          branch: "master"
+          writeBackTarget: "helmvalues:/argocd-image-updater-helm/values.yml"
+      commonUpdateSettings:
+        updateStrategy: "semver"
