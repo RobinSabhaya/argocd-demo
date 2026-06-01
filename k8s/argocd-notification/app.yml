@@ -1,0 +1,24 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: demo-app
+  namespace: argocd
+  labels:
+    name: demo-app
+  annotations:
+    notifications.argoproj.io/subscribe.on-health-degraded.email: "<user_email>"
+    notifications.argoproj.io/subscribe.on-deployed.email: "<user_email>"
+
+spec:
+  project: default # Associates this Application with the 'default' ArgoCD project
+  source:
+    repoURL: https://github.com/RobinSabhaya/argocd-demo.git # Git repository containing the app manifests
+    targetRevision: master # Branch or tag to track in the repository
+    path: argocd-image-updater # Path within the repo where the manifests(kustomization) are located
+  destination:
+    server: https://kubernetes.default.svc # Kubernetes API server address (in-cluster)
+    namespace: default # Namespace in the cluster where app resources will be deployed
+  syncPolicy:
+    automated: # Enables automated sync for the application
+      prune: true # Automatically deletes resources that are no longer defined in Git
+      selfHeal: true # Automatically corrects drift between live and desired state

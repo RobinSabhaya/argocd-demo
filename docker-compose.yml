@@ -1,0 +1,31 @@
+services:
+  # MONGODB 
+  mongoDB:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+    - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: <username>
+      MONGO_INITDB_ROOT_PASSWORD: <password>
+    volumes:
+      - mongo_data:/data/db
+  volumes:
+    mongo_data:
+
+  MySqlDB:
+    image: mysql
+    container_name: mysql
+    restart: always
+    ports:
+    - "3306:3306"
+    environment:
+      MYSQL_USER: <username>
+      MYSQL_ROOT_PASSWORD: <password>
+      MYSQL_PASSWORD: <password>
+      MYSQL_DATABASE: <database_name>
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
