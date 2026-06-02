@@ -3,6 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ include "argocd-image-updater-helm.fullname" . }}
+  namespace: {{ .Values.customNamespace }}
   labels:
     {{- include "argocd-image-updater-helm.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}

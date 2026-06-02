@@ -3,6 +3,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "argocd-image-updater-helm.fullname" . }}
+  namespace: {{ .Values.customNamespace }}
   labels:
     {{- include "argocd-image-updater-helm.labels" . | nindent 4 }}
 spec:

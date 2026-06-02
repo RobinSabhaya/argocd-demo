@@ -162,3 +162,4 @@ affinity: {}
 
 env:
   PORT: 3000
+customNamespace: "argocd"
