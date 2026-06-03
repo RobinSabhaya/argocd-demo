@@ -9,10 +9,11 @@ spec:
       images:
         - alias: "argocd-image-updater-helm"
           imageName: "robinsabhaya/app"
+          manifestTargets:
+            helm:
+              name: "image.repository"
+              tag: "image.tag"
       writeBackConfig:
         method: "git:secret:argocd/git-creds"
-        gitConfig:
-          branch: "master"
-          writeBackTarget: "helmvalues:/argocd-image-updater-helm/values.yml"
       commonUpdateSettings:
         updateStrategy: "semver"
