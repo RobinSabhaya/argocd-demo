@@ -2,5 +2,5 @@
 
 argocd-image-updater-helm:
   image:
-    tag: v1.0.15
+    tag: v1.0.16
     name: robinsabhaya/app
