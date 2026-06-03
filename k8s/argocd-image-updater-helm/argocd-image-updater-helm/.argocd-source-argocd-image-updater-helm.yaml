@@ -1,0 +1,8 @@
+helm:
+  parameters:
+  - name: argocd-image-updater-helm.image.repository
+    value: robinsabhaya/app
+    forcestring: true
+  - name: argocd-image-updater-helm.image.tag
+    value: v1.0.20
+    forcestring: true
