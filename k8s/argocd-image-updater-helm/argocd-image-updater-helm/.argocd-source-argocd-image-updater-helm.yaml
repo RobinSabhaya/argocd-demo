@@ -10,5 +10,5 @@ helm:
     value: robinsabhaya/app
     forcestring: true
   - name: image.tag
-    value: v1.0.20
+    value: v1.0.21
     forcestring: true
