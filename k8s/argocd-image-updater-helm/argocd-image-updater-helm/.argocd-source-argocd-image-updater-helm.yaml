@@ -7,5 +7,5 @@ helm:
     value: robinsabhaya/app
     forcestring: true
   - name: argocd-image-updater-helm.image.tag
-    value: v1.0.19
+    value: v1.0.20
     forcestring: true
