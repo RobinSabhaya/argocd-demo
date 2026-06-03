@@ -3,6 +3,9 @@ helm:
   - name: argocd-image-updater-helm.image.name
     value: robinsabhaya/app
     forcestring: true
+  - name: argocd-image-updater-helm.image.repository
+    value: robinsabhaya/app
+    forcestring: true
   - name: argocd-image-updater-helm.image.tag
     value: v1.0.19
     forcestring: true
